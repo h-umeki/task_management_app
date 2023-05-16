@@ -2,7 +2,7 @@ databases:
   - name: pg
     databaseName: railsdb_bq3m
     user: admin
-    region: 
+    region: Singapore
 
 services:
   - type: web

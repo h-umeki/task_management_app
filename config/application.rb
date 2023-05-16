@@ -23,6 +23,6 @@ module TaskManagementApp
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
-    config.hosts << 'task-management-app.onrender.com'
+    config.hosts << 'task-management-app-3ygd.onrender.com'
   end
 end

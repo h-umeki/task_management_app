@@ -1,8 +1,14 @@
 <p style="color: green"><%= notice %></p>
 <h1>タスク一覧</h1>
-<table class="table">
+<table class="table" style="table-layout:fixed;">
   <tr>
-    <th>タスク名</th><th>タスク説明</th><th>終了期限</th><th>優先度</th><th>ステータス</th><th>ラベル</th><th>作成日時</th>
+    <th>タスク名</th>
+    <th>タスク説明</th>
+    <th>終了期限</th>
+    <th>優先度</th>
+    <th>ステータス</th>
+    <th>ラベル</th>
+    <th><%= sort_link(@q, :created_at, "作成日時") %></th>
   </tr>
 <div id="tasks">
   <% @tasks.each do |task| %>

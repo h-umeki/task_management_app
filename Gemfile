@@ -57,6 +57,7 @@ gem "rails-i18n", "~> 7.0", ">= 7.0.6"
 gem "bootstrap", "~> 5.0.2"
 gem 'kaminari'
 gem 'dotenv'
+gem 'ransack'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

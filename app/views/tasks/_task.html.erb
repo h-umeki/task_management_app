@@ -2,11 +2,11 @@
 <tr>
     <td><%= task.task_name %></td>
     <td><%= task.task_comment %></td>
-    <td><%= task.expiry_date %></td>
+    <td><%= task.expiry_date.nil? ? "" : l(task.expiry_date, format: :long) %></td>
     <td><%= task.priority %></td>
-    <td><%= task.status %></td>
+    <td><%= task.status_before_type_cast.to_i == 0 ? "" : Task.statuses.invert[task.status_before_type_cast.to_i] %></td>
     <td><%= task.label %></td>
-    <td><%= task.created_at %></td>
+    <td><%= l(task.created_at, format: :long) %></td>
     <td><%= link_to "詳細", task %></td>
   </tr>
 </div>

@@ -38,7 +38,7 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.select :status, Task.statuses.keys.to_a, selected: Task.statuses.invert[:status_before_type_cast], style: "width: 180px;"%>
   </div>
 
   <div>

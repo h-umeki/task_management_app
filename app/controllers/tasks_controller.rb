@@ -3,7 +3,9 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all.page(params[:page]).per(10)
+    # @tasks = Task.all.page(params[:page]).per(10)
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
   # GET /tasks/1 or /tasks/1.json

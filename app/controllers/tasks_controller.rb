@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     # @tasks = Task.all.page(params[:page]).per(10)
-    @q = Task.ransack(params[:q])
+    @q = Task.order(created_at: :desc).ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page]).per(10)
   end
 

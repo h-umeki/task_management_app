@@ -22,4 +22,14 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+#  database: db/production.sqlite3
+  host: <%= ENV["TASK_APP_HOST"] %>
+  database: <%= ENV["TASK_APP_DATABASE"] %>
+  username: <%= ENV["TASK_APP_DATABASE_USERNAME"] %>
+  password: <%= ENV["TASK_APP_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  charset: utf8
+  collation: utf8_general_ci
